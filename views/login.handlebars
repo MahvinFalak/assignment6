@@ -1,0 +1,29 @@
+{{> header}}
+   <div class="container mt-5">
+    <h3>Login</h3>
+    {{#if succs}}
+    <div class="alert alert-info">{{succs}}</div>
+    {{/if}}
+    
+    {{#if error}}
+    <div class="alert alert-danger">{{error}}</div>
+    {{/if}}
+
+        <form action="/login" method="post">
+        <div class="mt-3">
+        <input type="email" id="email" name="email" placeholder="Email Address"/>
+        {{#if emailErr}}
+            <p class="text-danger">{{emailErr}}</p>
+        {{/if}}
+        </div>
+        <div class="mt-3">
+        <input type="password" id="password" name="password" placeholder="Password"/>
+        {{#if passErr}}
+            <p class="text-danger">{{passErr}}</p>
+        {{/if}}
+        </div>
+        <div class="mt-3">
+        <input type="submit" class="btn" value="Login">
+        </div>
+        </form>
+    </div>

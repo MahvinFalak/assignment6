@@ -1,0 +1,14 @@
+{{> header2}}
+<div class="container">
+            {{#if succs}}
+             <h2>Order has been placed successfully!</h2>
+                <p class="alert alert-success">{{succs}}</p>
+                <a href="/menu"><input type="button" class="btn btn-dark" value="Go and order some more"></a>
+            {{/if}}
+
+            {{#if error}}
+                <div class="alert alert-danger m-3">{{error}}</div>
+
+                <h4 class="text-center">Ohhh noo</h4>
+            {{/if}}
+</div>

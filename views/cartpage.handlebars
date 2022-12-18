@@ -1,0 +1,46 @@
+{{> header2}}
+  <div class="container">
+          <h2>Shopping Cart</h2>
+          <hr>
+          <table class="table">
+            <tbody class="align-middle fw-bold" >
+              {{#each data}}
+              <tr>
+                <td>
+                    <img src="{{image}}" class="img-fluid rounded-3" style="width: 120px;" alt="Pizza">
+                </td>
+                 <td >
+                   <p class="mb-2">{{name}}</p>
+                </td>
+                <td>
+                  <p class="mb-2">{{price}}</p>
+                </td>
+                <td>
+                  <div class="d-flex flex-row">
+                    <button class="btn" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                      <a href="/updatecart/{{name}}?action=remove"><i class="bi bi-dash"></i></a>
+                    </button>
+
+                    <input type="number" id="quantity" name="quantity" min="1" max="20" style="width: 90%;" name="quantity" value="{{quantity}}" />
+
+                    <button class="btn btn-link"
+                      onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                      {{!-- <a href="/cart/{{id}}"><i class="bi bi-plus"></i></a> --}}
+                      <a href="/updatecart/{{name}}?action=add"><i class="bi bi-plus"></i></a>
+                    </button>
+                  </div>
+                </td>
+                <td style="text-align: right">
+                    <a href="/updatecart/{{name}}?action=clear" class="btn btn-dark">Delete</a>
+                </td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+          <div class="d-flex">
+           <h5 class="text-center mx-auto" style="padding-left:250px ;" ><strong>₹: {{total}}</strong></h5>
+           <a href="/checkout?amount={{total}}" class="btn btn-dark btn-lg">
+                Checkout >
+              </a>
+        </div>
+    </div>

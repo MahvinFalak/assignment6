@@ -1,0 +1,17 @@
+
+{{>header}}
+    <div class="container">
+        <div>
+            <p class="card-text">{{#if succmsg}}
+            <div class="alert alert-success">{{succmsg}}</div>
+            {{/if}}
+            {{#if errmsg}}
+            <div class="alert alert-danger">{{errmsg}}</div>
+            {{/if}}
+            </p>
+           
+        </div>
+        
+    </div>
+</div>
+{{>footer}}

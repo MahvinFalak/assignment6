@@ -1,0 +1,31 @@
+{{> header2}}
+<div class="container">
+   <h2>My Orders</h2>
+    <hr>
+          <table class="table">
+            <tbody class="align-middle fw-bold" >
+              {{#each orders}}
+              <tr>
+                <td>
+                  {{#each pizzas}}
+                    <div class="d-flex">
+                    <img src="{{this.image}}" class="img-fluid rounded-3 mt-2" style="width: 120px;" alt="Pizza">
+                    <p class="mx-auto">{{this.name}}</p>
+                    <div class="d-flex">
+                    <p style="margin-right: 250px;">{{this.quantity}}</p>
+                    <p>{{this.price}}</p>
+                    </div>
+                    </div>
+                  {{/each}}
+                  <hr>
+                  <p style="text-align: right;"><u> Total amount: ₹{{amount}}</u></p>
+                </td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+          <div class="d-flex">
+           <a href="/menu" class="btn btn-dark">Go and order some more</a>
+        </div>
+    </div>  
+</div>
